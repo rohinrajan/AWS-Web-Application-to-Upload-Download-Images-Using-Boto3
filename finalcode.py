@@ -7,11 +7,11 @@ import os
 
 app = Flask(__name__, static_url_path='/temp', static_folder='temp')
 
-BUCKET_NAME = 'cloudassignmentbucket3'
+BUCKET_NAME = 'bucketName'
 
 s3= boto3.resource('s3',
-                 aws_access_key_id='AKIAICB2IHGJKZLKANGQ',
-                 aws_secret_access_key='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')
+                 aws_access_key_id='keyId',
+                 aws_secret_access_key='secrect_access_key')
 
 bucket = s3.Bucket(BUCKET_NAME)
 exists = True
