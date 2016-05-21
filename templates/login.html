@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form role="form" action="/login" method=post>
+    <dl>
+      <dt>Username:
+      <dd><input type=text name=username value="{{
+          request.form.username }}">
+      <dt>Password:
+      <dd><input type=password name=password>
+    </dl>
+    <p><input type=submit value=Login>
+</form>
+
+</body>
+</html>

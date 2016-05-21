@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p> Welcome {{ user }} </p>
+<p> Upload Files into S3 Bucket  </p>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <input type="submit" value="Upload">
+        </form>
+
+<p> -------------------------------------------------------- </p>
+<p> Delete files from the bucket </p>
+<form role="form" action="/deleted" method="POST" enctype="multipart/form-data">
+        <input type="text" name="del_filename" placeholder="Filename">
+        <input type="submit" value="Delete">
+</form>
+
+<p> -------------------------------------------------------- </p>
+<p> Download files from the bucket </p>
+
+<form role="form" action="/download" method="POST" enctype="multipart/form-data">
+        <input type="text" name="dwn_filename" placeholder="Filename">
+        <input type="submit" value="Download">
+</form>
+
+
+<p> Display the list of files </p>
+{% for obj in content  %}
+<div>
+	<img src="https://s3-us-west-2.amazonaws.com/cloudassignmentbucket3/{{ obj }}" height="50" width="40">
+	<p> {{ obj }} </p>
+</div>
+{% endfor  %}
+
+
+</body>
+</html>
